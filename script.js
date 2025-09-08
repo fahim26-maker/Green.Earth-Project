@@ -68,10 +68,10 @@ const showNewsByCategories = (plants) => {
     newsContainer.innerHTML = ""
     plants.forEach(plants => {
         newsContainer.innerHTML += `
-        <section class="h-100 w-80 p-3 bg-white ">
+        <section class="h-100 w-75 p-3 bg-white ">
         <div class="space-y-2" id="${plants.id}">
         <div><img src="${plants.image}" class="h-40 w-70"/></div>
-        <p class="font-semibold">${plants.name}</p>
+        <p class="font-semibold tree-name" data-id="${plants.id}">${plants.name}</p>
         <p class="text-gray-500 text-sm">${plants.description}</p>
         <div class="justify-between flex">
         <button class="bg-[#DCFCE7] text-[#15803D] rounded-lg p-1 text-sm">${plants.category}</button>
@@ -81,38 +81,44 @@ const showNewsByCategories = (plants) => {
         </div>
         </section>
         `
-    })
-}
-
-newsContainer.addEventListener('click', (e) => {
-    if(e.target.innerText === 'Add to Cart') {
-        handleBookMarks(e)
-    }
-})
-
-const handleBookMarks = (e) => {
-    console.log("Add to Cart button clicked")
-        const title = (e.target.parentNode.children[0].innerText)
-        const id = e.target.parentNode.id
-        console.log(id)
-
-        bookMarks.push({
-            title: title,
-            id: id,
-        });
-        showBookmarks(bookMarks);
+    });
 };
-
-const showBookmarks = (bookMarks) => {
-    bookMarkContainer.innerHTML = ""
-    bookMarks.forEach(bookMark => {
-        bookMarkContainer.innerHTML += `
-        <div class="">
-        <p>${bookMark.name}</p>
-        </div>
-        `
-    })
+const showLoading = () => {
+    newsContainer.innerHTML = `
+     <div class=" ">Loading...</div>
+    `
 }
+
+
+// newsContainer.addEventListener('click', (e) => {
+//     if(e.target.innerText === 'Add to Cart') {
+//         handleBookMarks(e)
+//     }
+// })
+
+// const handleBookMarks = (e) => {
+//     console.log("Add to Cart button clicked")
+//         const title = (e.target.parentNode.children[0].innerText)
+//         const id = e.target.parentNode.id
+//         console.log(id)
+
+//         bookMarks.push({
+//             title: title,
+//             id: id,
+//         });
+//         showBookmarks(bookMarks);
+// };
+
+// const showBookmarks = (bookMarks) => {
+//     bookMarkContainer.innerHTML = ""
+//     bookMarks.forEach(bookMark => {
+//         bookMarkContainer.innerHTML += `
+//         <div class="">
+//         <p>${plants.name}</p>
+//         </div>
+//         `
+//     })
+// }
 
 loadCategory();
 loadAllTrees('')
