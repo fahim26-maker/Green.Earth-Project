@@ -11,7 +11,7 @@
 <body class="inter ">
     <header class="">
         <nav class="bg-[#15803D] p-5 justify-between flex px-20 md:justify-between md:px-20 space-y-4 md:space-y-0">
-            <p class="font-semibold text-white md:text-left">Green Earth</p>
+            <p class="font-semibold text-white text-2xl md:text-left">Green Earth</p>
             <div class="text-white space-x-7 md:justify-start">
                 <a href="">About</a>
                  <a href="">Gallery</a>
@@ -30,11 +30,54 @@
         </section>
     </header>
     <!-- cards part -->
-     <main class="bg-[#F0FDF4]">
+     <p class="text-center text-2xl pt-12 py-7 font-semibold bg-[#F0FDF4]">Chooce your Trees</p>
+     <main class="bg-[#F0FDF4] flex">
+    <section class="w-10/12 mx-auto flex gap-5">
     <div>
-        <p class="text-center text-2xl pt-12 py-7">Chooce your Trees</p>
+        <p class="font-bold text-2xl">Categories</p>
+        <ul class="p-2 space-y-1" id="categoryContainer">
+            <li class="hover:bg-[#15803D] w-45 cursor-pointer p-1 hover:text-white rounded-sm"></li>
+        </ul>
     </div>
-    
+    <div id="newsContainer" class="grid grid-cols-3 gap-10 ">
+        </div>
+        <div class="text-xl font-semibold "></div>
+        <div id="bookMarkContainer" class="bg-white h-200 w-60 ml-7 p-4 text-xl">Your Cart</div>
+    </section>
      </main>
+     <p class="text-center font-bold text-2xl py-10 bg-[#F0FDF4]">About the campaign</p>
+     <section class="bg-[#F0FDF4] flex">
+        <div class="">
+            <img src="assets/about.png" alt="" srcset="" class="ml-100 mb-20">
+        </div>
+        <div class="px-120 space-y-5 mt-15">
+            <p class="">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+            <ul>
+                <li>Restoration of natural habitats</li>
+                <li>Improvement of air quality</li>
+                <li>Support for local communities</li>
+            </ul>
+        </div>
+     </section>
+     <h3 class="text-2xl font-bold text-center py-10 bg-[#CFF0DC]">Our Impact</h3>
+     <section class="bg-[#CFF0DC] flex space-x-5 self-center place-content-center pb-12">
+        
+        <div class="bg-[#FFFFFF] w-80 h-40  rounded-xl place-items-center place-content-center">
+            <p class="text-[#15803D] text-2xl font-semibold">500K+</p>
+            <p class="text-gray-300 text-sm">Trees planted</p>
+        </div>
+        <div class="bg-[#FFFFFF] w-80 h-40 rounded-xl place-items-center place-content-center">
+            <p class="text-[#15803D] text-2xl font-semibold">120K+</p>
+            <p class="text-gray-300 text-sm">Community Involved</p>
+        </div>
+        <div class="bg-[#FFFFFF] w-80 h-40 rounded-xl place-items-center place-content-center">
+            <p class="text-[#15803D] text-2xl font-semibold">30K+</p>
+            <p class="text-gray-300 text-sm">Countries Reachend</p>
+        </div>
+     </section>
+     <section>
+        <h3 class="text-2xl font-bold text-center py-10">Plant a Tree Today</h3>
+     </section>
+     <script src="script.js"></script>
 </body>
 </html>
