@@ -32,6 +32,8 @@
     </header>
     <!-- cards part -->
      <p class="text-center text-2xl pt-12 py-7 font-semibold bg-[#F0FDF4]">Chooce your Trees</p>
+     <!-- <span class="loading loading-spinner loading-lg"></span> -->
+    </div>
      <main class="bg-[#F0FDF4] flex">
     <section class="w-11/12 mx-auto flex gap-4">
     <div>
@@ -40,9 +42,13 @@
             <li class="hover:bg-[#15803D] w-45 cursor-pointer p-1 hover:text-white rounded-sm"></li>
         </ul>
     </div>
+    <!-- Place this just above #newsContainer -->
+     <div class="hidden" id="loadingSpinner">
+        <span class="loading loading-dots loading-lg mx-auto my-10"></span>
+     </div>
+     
     <div id="newsContainer" class="grid grid-cols-3 gap-x-4 gap-y-4 ">
         </div>
-        
         <div class="bg-white h-200 w-50">
             <p class="text-xl p-2">Your Cart</p>
         <div id="bookMarkContainer" class=""></div>

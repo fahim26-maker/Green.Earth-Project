@@ -4,7 +4,7 @@ const newsContainer = document.getElementById
 ('newsContainer')
 const bookMarkContainer = document.getElementById
 ('bookMarkContainer')
-let bookMarks = []
+// let bookMarks = []
 
 const loadCategory = () => {
     fetch("https://openapi.programming-hero.com/api/categories")
@@ -25,7 +25,6 @@ const showcategory = (categories) => {
         <li id ="${cat.id}" class="hover:bg-[#15803D] w-45 cursor-pointer p-1 hover:text-white rounded-sm">${cat.category_name}</li>
         `
         });
-
         categoryContainer.addEventListener('click', (e) => {
             const allLi = document.querySelectorAll('li')
             allLi.forEach(li =>{
@@ -39,18 +38,27 @@ const showcategory = (categories) => {
         });
 };
 
+const spinner = document.getElementById('loadingSpinner');
+
 const loadNewsByCategory = (categoryId) => {
-    console.log(categoryId)
+    // console.log(categoryId)
+    // Show spinner
+    spinner.classList.remove('hidden');
+    newsContainer.innerHTML = ""; // Clear previous cards
+
     fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then(res => res.json())
     .then(data => {
         // console.log(data.plants)
         showNewsByCategories(data.plants)
+                // spinner.classList.add('hidden'); // Hide spinner after success 
     })
     .catch(err => {
-        console.log(err)
-    })
-}
+        console.error("Error loading category:",err);
+             spinner.classList.add('hidden'); // Hide spinner
+    });
+};
+
 const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
         .then(res => res.json())
@@ -82,13 +90,8 @@ const showNewsByCategories = (plants) => {
         </section>
         `
     });
+    spinner.classList.add('hidden');
 };
-const showLoading = () => {
-    newsContainer.innerHTML = `
-     <div class=" ">Loading...</div>
-    `
-}
-
 
 // newsContainer.addEventListener('click', (e) => {
 //     if(e.target.innerText === 'Add to Cart') {
